@@ -1,0 +1,84 @@
+WeGitIt
+Lynne Wang
+Sophia Xia
+Thet Htay Zaw
+pd 1
+---------------------
+Tea Database
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+USAGE:
+* Replace all fields, angle brackets included, with specified info.
+  eg, pd <pd#> --> pd 3
+* Delete these instructions once all teammates understand usage.
+  (from tilde bar above to tilde bar below)
+
+devlog--
+Use keyboard shortcut to jump to end,
+ replicate entry template,
+ modify appropriately.
+
+zone of reflection--
+Flesh out each category whenever necessary, appropriate.
+ Need not be fully filled in until end of project,
+ but best done as you go along.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+/////////// Zone of Reflection \\\\\\\\\\\
+------------------------------------------
+OBSTACLES OVERCOME
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<Wow, we so BOSS bc...>
+
+UNRESOLVED ISSUES
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<
+blah blah pesky bug...
+maybe some of these will move into the Obs.Ovrcm section...
+>
+
+COOL STUFF LEARNED
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- compareTo can sort Strings by unicode (alphabetical order)
+
+MID-DEVELOPMENT DESIGN CHANGES
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+We changed ___ to ___ bc...
+- In our proposal, we changed the idea of using interfaces or abstract classes
+for our teas to using 2D arrays.
+<etc>
+
+LESSONS LEARNED
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- write ideas down when you have one so you don't forget
+- think about Big-O and memory allocation before writing a method a certain way.
+It's easier to have things straight the first time than working with a lot of
+inefficient (for the coder or for the computer) code.
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+ ______   ______   __   __   __       ______   _______     
+/_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\    
+\:::_ \ \\::::_\/_\:\ \\ \ \\:\ \    \:::_ \ \\::::__\/__  
+ \:\ \ \ \\:\/___/\\:\ \\ \ \\:\ \    \:\ \ \ \\:\ /____/\ 
+  \:\ \ \ \\::___\/_\:\_/.:\ \\:\ \____\:\ \ \ \\:\\_  _\/ 
+   \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \ 
+    \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/ 
+==============================================================
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+2018-01-03
+--------------------------------------------------------------
+Lynne :: Brainstormed ideas, To-Do List, Added new GitHub files; Began devlog,
+How you are making meaningful use of at least two (2) other first term concepts
+Sophia :: Brainstormed ideas, Rough Timeline; How to make meaningful use of
+OOP (Visuals), How you are making meaningful use of at least two (2) other first term concepts
+Thet :: Brainstormed ideas, Wrote body of proposal, How you are making meaningful use of at least two (2) other first term concepts
+==============================================================
