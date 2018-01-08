@@ -82,3 +82,14 @@ Sophia :: Brainstormed ideas, Rough Timeline; How to make meaningful use of
 OOP (Visuals), How you are making meaningful use of at least two (2) other first term concepts
 Thet :: Brainstormed ideas, Wrote body of proposal, How you are making meaningful use of at least two (2) other first term concepts
 ==============================================================
+
+2018-01-04
+---------------------------------------------------------------
+We worked on revising our proposal and we made our UML diagram. 
+===============================================================
+
+2018-01-08
+---------------------------------------------------------------
+We spent our time in class to make a skeleton for our files. 
+Sophia made our README file. 
+===============================================================
