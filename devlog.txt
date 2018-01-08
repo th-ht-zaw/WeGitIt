@@ -85,11 +85,14 @@ Thet :: Brainstormed ideas, Wrote body of proposal, How you are making meaningfu
 
 2018-01-04
 ---------------------------------------------------------------
-We worked on revising our proposal and we made our UML diagram. 
+Lynne :: Brainstormed ideas on UML diagram 
+Thet :: Brainstormed ideas on the UML diagram
+Sophia :: Brainstormed ideas on the UML diagram and typed it out. 
 ===============================================================
 
 2018-01-08
 ---------------------------------------------------------------
-We spent our time in class to make a skeleton for our files. 
-Sophia made our README file. 
+Lynne :: Worked on the skeleton for Woo.java 
+Thet :: Worked on the skeleton for Database.java 
+Sophia :: Worked on the skeleton for Tea.java and worked on the README file
 ===============================================================
