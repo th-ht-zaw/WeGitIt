@@ -1,6 +1,5 @@
 public class Database {
 
-    
     //The main print method
     public String printinformation(String tea) {
 	String information = ""
