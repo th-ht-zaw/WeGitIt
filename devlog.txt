@@ -92,7 +92,7 @@ Sophia :: Brainstormed ideas on the UML diagram and typed it out.
 
 2018-01-08
 ---------------------------------------------------------------
-Lynne :: Worked on the skeleton for Woo.java 
+Lynne :: Worked on the skeleton for Woo.java, revised UML diagram
 Thet :: Worked on the skeleton for Database.java 
 Sophia :: Worked on the skeleton for Tea.java and worked on the README file
 ===============================================================
