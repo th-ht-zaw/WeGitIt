@@ -1,0 +1,32 @@
+WeGitIt
+Lynne Wang, Sophia Xia, Thet Htay Zaw
+
+To Do List
+=============================================================================
+* After each step, check logic and make sure the program does not crash.
+0. Create skeletons for Woo.java, Tea.java, and Database.java
+   a. should have instance variables and methods with an empty body.
+   b. import Keyboard.java for Woo.java
+
+============================ where we are up to =============================
+
+1. Create the 2D SuperArray for Tea.java.
+2. Get Tea.java to run in accordance with Woo.java.
+   a. Make sure it is possible to populate the 2D array from the
+   main method of Woo.java.
+3. Do some research on around 4 or 5 teas and populate the 2D array accordingly.
+   a. Chamomile, Peppermint, Ginger and Green
+4. Add information to Database.java(doesn't have to be extensive).
+5. Expand on the skeleton for Woo.java. (the instance variables and methods)
+6. Flesh out the main method for Woo.java.
+7. Add more teas to the Database and the 2D array.
+   a. Lemon, Oolong, White, Black, etc.
+8. Test the program out on a few people to make sure the instructions are clear.
+   a. Ask them how to make the program even better.
+9. Robustify code to make it user proof.
+   a. Takes care of issues like invalid inputs.
+10. Make the descriptions in Database.java more descriptive.
+
+==================================Stretch====================================
+
+11. Stretch
