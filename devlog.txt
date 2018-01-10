@@ -96,3 +96,10 @@ Lynne :: Worked on the skeleton for Woo.java, revised UML diagram
 Thet :: Worked on the skeleton for Database.java 
 Sophia :: Worked on the skeleton for Tea.java and worked on the README file
 ===============================================================
+
+2018-01-09
+---------------------------------------------------------------
+Lynne :: Revised UML diagram, discussed flowchart and to-do list
+Thet :: Drew flowchart, discussed flowchart
+Sophia :: Worked on to-do list, discussed flowchart and to-do list
+===============================================================
