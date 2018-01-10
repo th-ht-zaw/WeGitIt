@@ -26,6 +26,11 @@ public class Woo {//implements Comparable {
 	//implementation
     }
 
+    public String toString(){
+	return "";
+	//prints out Array TeaChoices
+    }
+
     //main
     public static void main (String[] args) {
         System.out.println("Compiles and runs!");
