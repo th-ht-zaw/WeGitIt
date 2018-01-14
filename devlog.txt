@@ -44,6 +44,8 @@ maybe some of these will move into the Obs.Ovrcm section...
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - compareTo can sort Strings by unicode (alphabetical order)
+- join.me is really good for team collaboration and having a driver when we're
+  not physically together
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -58,6 +60,7 @@ LESSONS LEARNED
 - think about Big-O and memory allocation before writing a method a certain way.
 It's easier to have things straight the first time than working with a lot of
 inefficient (for the coder or for the computer) code.
+- join.me is a lifesaver
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
@@ -102,4 +105,12 @@ Sophia :: Worked on the skeleton for Tea.java and worked on the README file
 Lynne :: Revised UML diagram, discussed flowchart and to-do list
 Thet :: Drew flowchart, discussed flowchart
 Sophia :: Worked on to-do list, discussed flowchart and to-do list
+===============================================================
+
+2018-01-14
+---------------------------------------------------------------
+Lynne :: Finished all array modification methods in Tea.java
+Thet :: Aided and directed Tea.java and Database.java through join.me,
+     	researched teas
+Sophia :: Worked on Database.java, researched teas
 ===============================================================
