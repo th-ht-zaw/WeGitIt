@@ -28,6 +28,7 @@ public class Tea {
 	    expandY();
 
         _data[_sizeY] = newArr;
+	_sizeY += 1;
     }
 
     //add tea to row
