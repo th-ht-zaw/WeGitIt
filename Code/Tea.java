@@ -40,7 +40,7 @@ public class Tea {
 		break;
 	    }
 	if ( _data[index].length <= size(_data[index]) )
-	    expandX(_data[index]);
+	    expandX(index);
         _data[index][size(_data[index])] = tea;
     }
 
@@ -69,7 +69,7 @@ public class Tea {
 
 	for( int i = 0; i < _data.length; i++ ) {
 	    if ( size(_data[i]) > _data[0].length )
-		expandX(temp[i]);
+		expandX(i);
 	    for( int x = 0; x < _data[i].length; x++ )
 		temp[i][x] = _data[i][x];	
 	}
@@ -79,7 +79,9 @@ public class Tea {
     //main
     public static void main (String[] args) {
 	
-        System.out.println("Compiles and runs!");
+        System.out.println("a".compareTo("b"));
+	System.out.println("b".compareTo("a"));
+	System.out.println("a".compareTo("aa"));
     }
 
 }
