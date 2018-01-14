@@ -2,73 +2,54 @@ public class Tea {
 
     //Instance Variables
     public String[][] _data; //will hardcode symFlav
-    private int _sizeX;
     private int _sizeY;
     
     //Default Constructor
     public Tea() {
 	_data = new String[10][10];
-        _sizeX = 0;
 	_sizeY = 0;
     }
-
     
     //Methods
     //size()
-    public int size(String[] array){
-
+    public int size(String[] arr){
+	int ct = 0;
+	for(int i = 0; i < arr.length; i++) {
+	    if (arr[i] == null)
+		return ct;
+	    ct += 1;
+	}
+	return ct;
     }
     
     //addArr
-    public void addArr(int index, String[] newArr){
-	if ( index < 0 || index >= sizeY() )
-	    throw new IndexOutOfBoundsException("add index out of bounds");
+    public void addArr(String[] newArr){
+	if (_data.length <= _sizeY)
+	    expandY();
 
-	//first expand if necessary
-	if ( _sizeY >= _data.length )
-	    expand();
-	
+        _data[_sizeY] = newArr;
     }
 
-    /* REFERENCE
-       public void add( int index, Object newVal )
-       {
-       if ( index < 0 || index >= size() )
-       throw new IndexOutOfBoundsException("add index out of bounds");
-
-       //first expand if necessary
-       if ( _size >= _data.length )
-       expand();
-
-       for( int i = _size; i > index; i-- ) {
-       _data[i] = _data[i-1]; //each slot gets value of left neighbor
-       }
-
-       _data[index] = newVal;
-       _size++;
-       }*/
-
-    
+    //add tea to row
     public void add(String symFlav, String tea){
-	//first expand if necessary
-	if ( _size >= _data[0].length )
-	    expand();
-
-	for( int i = _size;
-	     i > index;
-	     i-- ) {
-	    _data[i] = _data[i-1]; //each slot gets value of left neighbor
-	}
-
-	_data[index] = newVal;
-	_size++;
+	int index = 0;
+	for( int i = 0; i < _data.length; i++ )
+	    if (_data[i][0].equals(symFlav)) {
+		index = i;
+		break;
+	    }
+	if ( _data[index].length <= size(_data[index]) )
+	    expandX(_data[index]);
+        _data[index][size(_data[index])] = tea;
     }
 
     
     //Overloaded Add
     public void add(String symFlav1, String symFlav2,
 		    String symFlav3, String tea){
-	
+	add(symFlav1, tea);
+	add(symFlav2, tea);
+	add(symFlav3, tea);
     }
 
     
@@ -81,13 +62,16 @@ public class Tea {
 
 	_data[row] = temp;
     }
-
+    
     private void expandY(){
 	String[][] temp = new String[ _data.length * 2 ][ _data[0].length ];
 
-	for( int i = 0; i < _data[0].length; i++ )
-	    temp[i] = _data[i];
-
+	for( int i = 0; i < _data.length; i++ ) {
+	    if ( size(_data[i]) > _data[0].length )
+		expandX(temp[i]);
+	    for( int x = 0; x < _data[i].length; x++ )
+		temp[i][x] = _data[i][x];	
+	}
 	_data = temp;
     }
 
