@@ -12,12 +12,16 @@ public class Woo {
 					"heart","circulation",
 					"metabolism"};
 
-    private String[] _teachoices; //
+    private static String[] _teachoices = {"assam", "chamomile" , "darjeeling" , "keemun" , "sencha" , "silver_needle" ,
+					   "matcha" , "ginger" , "ginseng" , "peppermint" , "bai_mudan" ,
+					   "water_sprite" , "high_mountain" , "puerh" }; 
 
     //Default constructor
+    /*
     public Woo() {
 	_teachoices = new String[10];
     }
+    */ //Doubt we need this. 
     
     //Methods
     public void Narrow (String sF) {
@@ -32,6 +36,7 @@ public class Woo {
 	return "";
 	//prints out Array TeaChoices
     }
+    
     /*
       public void playIter() {
       while ( true ) {
@@ -84,6 +89,16 @@ public class Woo {
 	_choices = newChoices;	
     }
 
+    public static void trimTea(String[] teas) {
+	String[] newChoices = new String[15];
+	for (int i = 0 ; i < Tea.size(_teachoices) ; i++ ) {
+	    if ( hasA( _teachoices[i] , teas ) ) {
+		add(newChoices , _teachoices[i]);
+	    }
+	}
+	_teachoices = newChoices;
+    } 
+
     private static void expand(String[] arr)
     {
 	String[] temp = new String[ arr.length * 2 ];
@@ -123,13 +138,21 @@ public class Woo {
 	for( int i = 1; i < Tea.size(row); i++ )
 	    System.out.print(row[i] + ", ");
 	System.out.println("\n");
+	
+	/*
 	System.out.println(hasA("white" , _choices ));
 	System.out.println(hasA("silver_needle" , row) ); 
+	*/ 
 	
 	trims(row, table);
        	for( int i = 0; i < Tea.size(_choices); i++ )
 	    System.out.println(_choices[i]);
-	//}
+	
+	System.out.println("\n");
+	trimTea(row);
+	for (int i = 0; i < Tea.size(_teachoices) ; i++ )
+	    System.out.println(_teachoices[i]); 
+	
 	
     }
 
