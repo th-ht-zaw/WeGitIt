@@ -76,12 +76,35 @@ public class Tea {
 	_data = temp;
     }
 
-    //main
-    public static void main (String[] args) {
-	
-        System.out.println("a".compareTo("b"));
-	System.out.println("b".compareTo("a"));
-	System.out.println("a".compareTo("aa"));
+    //set
+    public String[] set( int index, String[] newVal ) {
+        String[] temp = _data[index];
+	_data[index] = newVal;
+	return temp;
     }
+    
+    //sort
+    public void sort() {
+	for( int i = 1; i < _sizeY; i++ ) {
+	    for( int x = i; x > 0; x-- ) {
+		if ( _data[x][0].compareTo( _data[x-1][0] ) < 0 ) {
+		    String[] temp = _data[x];
+		    _data[x] = _data[x-1];
+		    _data[x-1] = temp;
+		}
+		else 
+		    break; 
+	    }
+	}
+    }
+	
+    
+	//main
+	public static void main (String[] args) {
+	
+	    System.out.println("a".compareTo("b"));
+	    System.out.println("b".compareTo("a"));
+	    System.out.println("a".compareTo("aa"));
+	}
 
-}
+    }
