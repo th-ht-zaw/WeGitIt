@@ -2,7 +2,7 @@ public class Tea {
 
     //Instance Variables
     public String[][] _data; //will hardcode symFlav
-    private int _sizeY;
+    protected int _sizeY;
     
     //Default Constructor
     public Tea() {
@@ -85,7 +85,7 @@ public class Tea {
     }
     
     //size()
-    public int size(String[] arr){
+    public static int size(String[] arr){
 	int ct = 0;
 	for(int i = 0; i < arr.length; i++) {
 	    if (arr[i] == null)
@@ -159,7 +159,17 @@ public class Tea {
 	}
 	_data = temp;
     }
+    
+    //get
+    public String[] get( int row ) {
+	return _data[row];
+    }
 
+    //Overloaded get
+    public String get( int row, int col ) {
+	return _data[row][col];
+    }
+    
     //set
     public String[] set( int index, String[] newVal ) {
 	String[] temp = _data[index];
