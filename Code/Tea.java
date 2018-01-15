@@ -9,8 +9,52 @@ public class Tea {
 	_data = new String[10][10];
 	_sizeY = 0;
     }
+
+    //toString()
+    public String toString() {
+	String str = "";
+	for( int i = 0; i < _sizeY; i++ ) {
+	    for( int x = 0; x < size(_data[i]); x++ )
+		str += _data[i][x] + ",";
+	    str += "\n";
+	}
+	return str;
+    }
     
     //Methods
+    //populate (combines all helper methods
+    public void populate() {
+	/*
+	String[] traits = { "white", "green", "black",
+			    "oolong", "herbal" , "disgestion", "relaxation",
+			    "nausea", "sleep", "awake" , "skin" , "immune" ,
+			    "heart" , "circulation", "metabolism" };
+	for (int i = 0; i < traits.length ; i++ ) {
+	    String[] a = (String[]) traits[i]; 
+	    addArr(a);
+	}
+    }
+	*/
+			    
+	String[] white = {"white"}; addArr(white);
+	String[] green = {"green"}; addArr(green);
+	String[] black = {"black"}; addArr(black);
+	String[] oolong = {"oolong"}; addArr(oolong);
+	String[] herbal = {"herbal"}; addArr(herbal);
+	String[] digestion = {"digestion"}; addArr(digestion);
+	String[] relaxation = {"relaxation"}; addArr(relaxation);
+	String[] nausea = {"nausea"}; addArr(nausea);
+	String[] sleep = {"sleep"}; addArr(sleep);
+	String[] awake = {"awake"}; addArr(awake);
+	String[] skin = {"skin"}; addArr(skin);
+	String[] immune = {"immune"}; addArr(immune);
+	String[] heart = {"heart"}; addArr(heart);
+	String[] circulation = {"circulation"}; addArr(circulation);
+	String[] metabolism = {"metabolism"}; addArr(metabolism);
+
+	
+    }	
+    
     //size()
     public int size(String[] arr){
 	int ct = 0;
@@ -52,6 +96,8 @@ public class Tea {
 	add(symFlav2, tea);
 	add(symFlav3, tea);
     }
+
+ 
 
     
     //Expand
@@ -101,10 +147,9 @@ public class Tea {
     
 	//main
 	public static void main (String[] args) {
-	
-	    System.out.println("a".compareTo("b"));
-	    System.out.println("b".compareTo("a"));
-	    System.out.println("a".compareTo("aa"));
+	    Tea teas = new Tea();
+	    teas.populate();
+	    System.out.println(teas);
 	}
 
     }
