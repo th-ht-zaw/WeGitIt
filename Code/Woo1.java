@@ -1,7 +1,7 @@
 import cs1.Keyboard;
 
 //Driver
-public class Woo {
+public class Woo1 {
 
     //instance vars
     private static final String[] _tealist = new String[10]; //may not be final if user adds tea, list of teas
@@ -15,7 +15,7 @@ public class Woo {
     private String[] _teachoices; //
 
     //Default constructor
-    public Woo() {
+    public Woo1() {
 	_teachoices = new String[10];
     }
     
@@ -47,7 +47,7 @@ public class Woo {
     */
 
     //Search (binary)
-    public static String[] searchTeas(Tea teas, String sF) {
+    public static String[] searchTeas(Tea1 teas, String sF) {
 	String[] a = {"You","are","mistaked"};
 	int lo = 0;
 	int med = 0;
@@ -66,38 +66,48 @@ public class Woo {
     }
 
     public static boolean hasA(String str, String[] strArr) {
-	for (int i = 0 ; i < strArr.length ; i++ ) {
+	for (int i = 0 ; i < Tea1.size(strArr) ; i++ ) {
 	    if (str.equals(strArr[i])) {
 		return true;
 	    }
 	}
 	return false;
     }
-    /*
 
-    public static void trimsF(String[] teas, Tea example) {
+    public static void trims(String[] teas, Tea1 Table) {
 	String[] newChoices = new String[15];
-	for (int i = 0 ; i < teas.length ; i++ ) {
-	    for (int j = 0 ; j < _choices.length ; j++ ) {
-		if ( hasA(teas[i] , example.locate(_choices[j] ) ) ) {
-		    if ( ! (hasA (_choices[j] , newChoices ) ) ) {
-			newChoices[i] = _choices[j];
-		    }
-		}
-	    }
-	}
-	for (int z = 0 ; z < newChoices.length ; z++ ) {
-	    if ( newChoices[z] == null ) {
-		newChoices[z] = "a";
-	    }
-	}
-	_choices = newChoices;
-    } 
-    */
+	for (int i = 0; i < Tea1.size(teas); i++)
+	    for(int j = 0; j < Tea1.size(_choices); j++)
+		if (hasA(teas[i], Table.locate(_choices[j])))
+		    if ( ! (hasA (_choices[j] , newChoices ) ) )
+			add(newChoices, _choices[j]);
+	_choices = newChoices;	
+    }
+
+    private static void expand(String[] arr)
+    {
+	String[] temp = new String[ arr.length * 2 ];
+
+	for( int i = 0; i < arr.length; i++ )
+	    temp[i] = arr[i];
+
+	arr = temp;
+    }
+
+    
+    public static void add(String[] arr, String str )
+    {
+	//first expand if necessary
+	if ( Tea1.size(arr) >= arr.length )
+	    expand(arr);
+
+        arr[Tea1.size(arr)] = str;
+    }
+    
     
     //main
     public static void main (String[] args) {
-	Tea table = new Tea();
+	Tea1 table = new Tea1();
 	table.populate();
 	table.sort();
 
@@ -115,12 +125,12 @@ public class Woo {
 	System.out.println("\n");
 	System.out.println(hasA("white" , _choices ));
 	System.out.println(hasA("silver_needle" , row) ); 
-	/*
-	trimsF(row, table);
-       	for( int i = 0; i < _choices.length; i++ )
+	
+	trims(row, table);
+       	for( int i = 0; i < Tea1.size(_choices); i++ )
 	    System.out.println(_choices[i]);
 	//}
-	*/
+	
     }
 
 }//end

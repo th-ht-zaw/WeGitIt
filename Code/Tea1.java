@@ -1,11 +1,11 @@
-public class Tea {
+public class Tea1 {
 
     //Instance Variables
     public String[][] _data; //will hardcode symFlav
     protected int _sizeY;
     
     //Default Constructor
-    public Tea() {
+    public Tea1() {
 	_data = new String[10][10];
 	_sizeY = 0;
     }
@@ -194,7 +194,7 @@ public class Tea {
 
     //locate (basically get but with Strings)
     public String[] locate(String symFlav) {
-	for (int i = 0 ; i < _data.length ; i++ ) {
+	for (int i = 0 ; i < _sizeY ; i++ ) {
 	    if (symFlav.equals(_data[i][0])) {
 		return _data[i];
 	    }
@@ -205,10 +205,14 @@ public class Tea {
     
     //main
     public static void main (String[] args) {
-	Tea teas = new Tea();
+	Tea1 teas = new Tea1();
 	teas.populate();
 	teas.sort();
 	System.out.println(teas);
-    }
 
+	for (int i = 0 ; i < size(teas.locate("digestion")) ; i++ ) {
+	    System.out.println(teas.locate("digestion")[i]);
+	}
+
+    }
 }
