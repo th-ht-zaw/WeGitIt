@@ -151,8 +151,8 @@ public class Woo {
 	    trims(row, table);
 	    trimTea(row);
 
-	    System.out.println("\nCurrent Tea Choices: ")
-		;	    for (int i = 0; i < Tea.size(_teachoices) ; i++ )
+	    System.out.println("\nCurrent Tea Choices: ");
+	    for (int i = 0; i < Tea.size(_teachoices) ; i++ )
 		System.out.print(_teachoices[i] + ", ");
 
 	    System.out.println("\n");
