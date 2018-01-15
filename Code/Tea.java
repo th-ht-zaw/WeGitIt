@@ -15,7 +15,7 @@ public class Tea {
 	String str = "";
 	for( int i = 0; i < _sizeY; i++ ) {
 	    for( int x = 0; x < size(_data[i]); x++ )
-		str += _data[i][x] + ",";
+		str += _data[i][x] + ", ";
 	    str += "\n";
 	}
 	return str;
@@ -25,33 +25,64 @@ public class Tea {
     //populate (combines all helper methods
     public void populate() {
 	String[] traits = { "white", "green", "black", "oolong", "herbal" ,
-			    "disgestion", "relaxation", "nausea", "sleep",
+			    "digestion", "relaxation", "nausea", "sleep",
 			    "awake" , "skin" , "immune" ,"heart" ,
 			    "circulation", "metabolism" };
 	for (int i = 0; i < traits.length ; i++ ) {
 	    String arr[] = {traits[i]};
 	    addArr(arr);
 	}
-    }
-    /*
-			    
-      String[] white = {"white"}; addArr(white);
-      String[] green = {"green"}; addArr(green);
-      String[] black = {"black"}; addArr(black);
-      String[] oolong = {"oolong"}; addArr(oolong);
-      String[] herbal = {"herbal"}; addArr(herbal);
-      String[] digestion = {"digestion"}; addArr(digestion);
-      String[] relaxation = {"relaxation"}; addArr(relaxation);
-      String[] nausea = {"nausea"}; addArr(nausea);
-      String[] sleep = {"sleep"}; addArr(sleep);
-      String[] awake = {"awake"}; addArr(awake);
-      String[] skin = {"skin"}; addArr(skin);
-      String[] immune = {"immune"}; addArr(immune);
-      String[] heart = {"heart"}; addArr(heart);
-      String[] circulation = {"circulation"}; addArr(circulation);
-      String[] metabolism = {"metabolism"}; addArr(metabolism);
 
-    */	
+	//Adding assam
+	add("black", "awake" , "skin" , "heart", "metabolism",  "assam");
+	add("awake", "circulation" , "digestion" , "assam");
+	
+	//Adding chamomile
+	add("herbal", "relaxation", "digestion" , "sleep", "nausea", "chamomile");
+
+	//Adding darjeeling
+	add("black" , "digestion" , "awake" , "heart" , "metabolism" , "darjeeling" );
+
+	//Adding keemun
+	add("black" , "digestion" , "awake" , "heart" , "metabolism" , "keemun" );
+
+	//Adding sencha
+	add("green" , "relaxation" , "immune" , "sencha" );
+	add( "metabolism" , "sencha" ); 
+
+	//Adding silver needle
+	add("white" , "digestion", "awake" , "silver_needle" );
+	add("immune" , "heart" , "metabolism" , "silver_needle" );
+
+	//Adding matcha
+	add("green" , "skin" , "relaxation" , "matcha");
+	add("immune" , "matcha");
+
+	//Adding ginger
+	add("herbal" , "nausea" , "immune" , "heart" , "circulation" , "ginger" );
+	add("metabolism" , "ginger" );
+
+	//Adding ginseng
+	add("herbal" , "digestion" , "relaxation" , "skin" , "metabolism" , "ginseng");
+
+	//Adding peppermint
+	add("herbal" , "sleep" , "digestion" , "relaxation" , "nausea" , "peppermint" );
+	add("immune" , "peppermint");
+	add("metabolism", "peppermint");
+
+	//Adding bai mudan
+	add("white", "immune" , "heart" , "bai_mudan");
+
+	//Adding water sprite
+	add("oolong" , "relaxation" , "awake" , "immune" , "heart" , "water_sprite" );
+
+	//Adding high mountain
+	add("oolong" , "relaxation" , "immune" , "high_mountain");
+	add("heart" , "high_mountain");
+
+	//Adding puerh
+	add("digestion" , "awake" , "heart" , "puerh" ); 
+    }
     
     //size()
     public int size(String[] arr){
@@ -95,8 +126,17 @@ public class Tea {
 	add(symFlav3, tea);
     }
 
+    //Overloaded Add version 2
+    public void add(String symFlav1, String symFlav2,
+		    String symFlav3, String symFlav4,
+		    String symFlav5, String tea) {
+	add(symFlav1, tea);
+	add(symFlav2, tea);
+	add(symFlav3, tea);
+	add(symFlav4, tea);
+	add(symFlav5, tea); 
  
-
+    }
     
     //Expand
     private void expandX(int row){
@@ -147,6 +187,7 @@ public class Tea {
     public static void main (String[] args) {
 	Tea teas = new Tea();
 	teas.populate();
+	teas.sort();
 	System.out.println(teas);
     }
 
