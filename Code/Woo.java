@@ -14,13 +14,15 @@ public class Woo {
 
     private static String[] _teachoices = {"assam", "chamomile" , "darjeeling" , "keemun" , "sencha" , "silver_needle" ,
 					   "matcha" , "ginger" , "ginseng" , "peppermint" , "bai_mudan" ,
-					   "water_sprite" , "high_mountain" , "puerh" }; 
+					   "water_sprite" , "high_mountain" , "puerh" };
+
+    private static boolean isPlaying = true; 
 
     //Default constructor
     /*
-    public Woo() {
-	_teachoices = new String[10];
-    }
+      public Woo() {
+      _teachoices = new String[10];
+      }
     */ //Doubt we need this. 
     
     //Methods
@@ -126,33 +128,50 @@ public class Woo {
 	table.populate();
 	table.sort();
 
-	//while (true) {
-	String choice;
+	while (isPlaying) { 
+	    String choice;
+
+	    System.out.println("Current Tea Choices: ");
+	    for( int i = 0; i < Tea.size(_teachoices) ; i++ )
+		System.out.print(_teachoices[i] + ", ");
+
+	    System.out.println("\n");
+	    
+	    System.out.println("Pick a trait: ");
+	    for( int i = 0; i < Tea.size(_choices); i++ )
+		System.out.print(_choices[i] + ", ");
+
+	    System.out.println("\n");
+	    
+	    choice = Keyboard.readString();
+	    System.out.println("\nYour choice: " + choice);
+	    
+	    String[] row = searchTeas(table, choice);
 	
-	System.out.println("Pick a symptom:");
-	for( int i = 0; i < _choices.length; i++ )
-	    System.out.println(_choices[i]);
-	choice = Keyboard.readString();
-	System.out.println(choice);
-	String[] row = searchTeas(table, choice);
-	for( int i = 1; i < Tea.size(row); i++ )
-	    System.out.print(row[i] + ", ");
-	System.out.println("\n");
-	
-	/*
-	System.out.println(hasA("white" , _choices ));
-	System.out.println(hasA("silver_needle" , row) ); 
-	*/ 
-	
-	trims(row, table);
-       	for( int i = 0; i < Tea.size(_choices); i++ )
-	    System.out.println(_choices[i]);
-	
-	System.out.println("\n");
-	trimTea(row);
-	for (int i = 0; i < Tea.size(_teachoices) ; i++ )
-	    System.out.println(_teachoices[i]); 
-	
+	    trims(row, table);
+	    trimTea(row);
+
+	    System.out.println("\nCurrent Tea Choices: ")
+		;	    for (int i = 0; i < Tea.size(_teachoices) ; i++ )
+		System.out.print(_teachoices[i] + ", ");
+
+	    System.out.println("\n");
+	    System.out.println("\nDo you want to keep playing?");
+	    System.out.println("\nType 0 for yes or type 1 for no" + "\n");
+
+	    int selection;
+	    selection = Keyboard.readInt();
+	    if (selection == 1) {
+		isPlaying = false;
+	    }
+
+	    if (selection > 1 || selection < 0) {
+		System.out.println("Invalid input. Exiting by default.");
+		isPlaying = false;
+	    }
+
+	    System.out.println("\n");
+	}
 	
     }
 
