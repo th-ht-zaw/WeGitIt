@@ -64,6 +64,46 @@ public class Woo {
 	}
 	return a;
     }
+
+    public static boolean hasA(String str, String[] strArr) {
+	for (int i = 0 ; i < Tea.size(strArr) ; i++ ) {
+	    if (str.equals(strArr[i])) {
+		return true;
+	    }
+	}
+	return false;
+    }
+
+    public static void trims(String[] teas, Tea Table) {
+	String[] newChoices = new String[15];
+	for (int i = 0; i < Tea.size(teas); i++)
+	    for(int j = 0; j < Tea.size(_choices); j++)
+		if (hasA(teas[i], Table.locate(_choices[j])))
+		    if ( ! (hasA (_choices[j] , newChoices ) ) )
+			add(newChoices, _choices[j]);
+	_choices = newChoices;	
+    }
+
+    private static void expand(String[] arr)
+    {
+	String[] temp = new String[ arr.length * 2 ];
+
+	for( int i = 0; i < arr.length; i++ )
+	    temp[i] = arr[i];
+
+	arr = temp;
+    }
+
+    
+    public static void add(String[] arr, String str )
+    {
+	//first expand if necessary
+	if ( Tea.size(arr) >= arr.length )
+	    expand(arr);
+
+        arr[Tea.size(arr)] = str;
+    }
+    
     
     //main
     public static void main (String[] args) {
@@ -82,8 +122,15 @@ public class Woo {
 	String[] row = searchTeas(table, choice);
 	for( int i = 1; i < Tea.size(row); i++ )
 	    System.out.print(row[i] + ", ");
+	System.out.println("\n");
+	System.out.println(hasA("white" , _choices ));
+	System.out.println(hasA("silver_needle" , row) ); 
 	
+	trims(row, table);
+       	for( int i = 0; i < Tea.size(_choices); i++ )
+	    System.out.println(_choices[i]);
 	//}
+	
     }
 
 }//end

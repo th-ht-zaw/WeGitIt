@@ -191,7 +191,17 @@ public class Tea {
 	    }
 	}
     }
-	
+
+    //locate (basically get but with Strings)
+    public String[] locate(String symFlav) {
+	for (int i = 0 ; i < _sizeY ; i++ ) {
+	    if (symFlav.equals(_data[i][0])) {
+		return _data[i];
+	    }
+	}
+	System.out.println("Error: Trait does not exist");
+	return _data[1]; //Just for the code to work
+    }
     
     //main
     public static void main (String[] args) {
@@ -199,6 +209,10 @@ public class Tea {
 	teas.populate();
 	teas.sort();
 	System.out.println(teas);
-    }
 
+	for (int i = 0 ; i < size(teas.locate("digestion")) ; i++ ) {
+	    System.out.println(teas.locate("digestion")[i]);
+	}
+
+    }
 }
