@@ -128,7 +128,11 @@ public class Woo {
 	table.populate();
 	table.sort();
 
-	while (isPlaying) { 
+	while (isPlaying) {
+	    final String ANSI_CLS = "\u001b[2J";
+	    final String ANSI_HOME = "\u001b[H";
+	    System.out.print(ANSI_CLS + ANSI_HOME);
+	    System.out.flush();
 	    String choice;
 
 	    System.out.println("Current Tea Choices: ");
@@ -172,7 +176,10 @@ public class Woo {
 
 	    System.out.println("\n");
 	}
-	
+	for (String tea : _teachoices) {
+	    Database.printinformation(tea);
+	    System.out.println();
+	}
     }
 
 }//end
