@@ -24,7 +24,7 @@ public class Database {
 	    System.out.println(information);
 	}
 	if (tea == "silver_needle") {
-	    information = "Silver Needle Tea:\nType: White\n\n\tAlso known as Bai Hao YinZheng, Silver Needle Tea is has a lot of caffeine. Many believe that white teas are generally low in caffeine, however Silver Needle Tea has the most caffeine out of all the white teas making it a great tea to drink to help you stay awake. Silver Needle tea will also aid in digestion and boost your metabolism. It will also aid in heart health and immune health.";
+	    information = "Silver Needle Tea:\nType: White\n\n\tAlso known as Bai Hao YinZheng, Silver Needle Tea has a lot of caffeine. Many believe that white teas are generally low in caffeine, however Silver Needle Tea has the most caffeine out of all the white teas making it a great tea to drink to help you stay awake. Silver Needle tea will also aid in digestion and boost your metabolism. It will also aid in heart health and immune health.";
 	    System.out.println(information);
 	}
 	if (tea == "matcha") {

@@ -16,7 +16,9 @@ public class Woo {
 					   "matcha" , "ginger" , "ginseng" , "peppermint" , "bai_mudan" ,
 					   "water_sprite" , "high_mountain" , "puerh" };
 
-    private static boolean isPlaying = true; 
+    private static String[] selections = new String[15];
+
+    private static boolean isPlaying = true;
 
     //Default constructor
     /*
@@ -127,59 +129,83 @@ public class Woo {
 	Tea table = new Tea();
 	table.populate();
 	table.sort();
-
+	
 	while (isPlaying) {
+	    
 	    final String ANSI_CLS = "\u001b[2J";
 	    final String ANSI_HOME = "\u001b[H";
 	    System.out.print(ANSI_CLS + ANSI_HOME);
 	    System.out.flush();
+	    
+	    
 	    String choice;
 
-	    System.out.println("Current Tea Choices: ");
-	    for( int i = 0; i < Tea.size(_teachoices) ; i++ )
-		System.out.print(_teachoices[i] + ", ");
+	    System.out.println("CURRENT TEA CHOICES: ");
+	    for( int i = 0; i < Tea.size(_teachoices); i++ )
+		System.out.print(_teachoices[i] + "  ");
+
+	    System.out.println("\n");
+
+	    System.out.println("YOUR SELECTIONS: ");
+	    for( int i = 0; i < Tea.size(selections); i++ )
+		System.out.print(selections[i] + "  ");
 
 	    System.out.println("\n");
 	    
-	    System.out.println("Pick a trait: ");
+	    System.out.println("PICK A TRAIT (type the trait): ");
 	    for( int i = 0; i < Tea.size(_choices); i++ )
-		System.out.print(_choices[i] + ", ");
+		System.out.print(_choices[i] + "  ");
 
 	    System.out.println("\n");
 	    
 	    choice = Keyboard.readString();
-	    System.out.println("\nYour choice: " + choice);
+	    
+	    if (! (hasA(choice, _choices) ) ) {
+		System.out.println("Invalid input. Try again.");
+		continue;
+	    }
+		
+	    add(selections, choice);
+	    System.out.println("\nYOUR CHOICE: " + choice);
 	    
 	    String[] row = searchTeas(table, choice);
 	
 	    trims(row, table);
 	    trimTea(row);
 
-	    System.out.println("\nCurrent Tea Choices: ");
+	    System.out.println("\nCURRENT TEA CHOICES: ");
 	    for (int i = 0; i < Tea.size(_teachoices) ; i++ )
-		System.out.print(_teachoices[i] + ", ");
+		System.out.print(_teachoices[i] + "  ");
 
-	    System.out.println("\n");
-	    System.out.println("\nDo you want to keep playing?");
+	    System.out.println("");
+	    System.out.println("\nDo you want to select more traits?");
 	    System.out.println("\nType 0 for yes or type 1 for no" + "\n");
 
+
 	    int selection;
-	    selection = Keyboard.readInt();
-	    if (selection == 1) {
-		isPlaying = false;
+	    outer: while (true) {
+		selection = Keyboard.readInt();
+		if (selection == 1) {
+		    isPlaying = false;
+		    break outer;
+		}
+	        
+		else if (selection > 1 || selection < 0) {
+		    System.out.println("Invalid input. Type 0 for yes or type 1 for no.");
+		    continue outer;
+		}
+		
+		else
+		    break outer;
+		
 	    }
-
-	    if (selection > 1 || selection < 0) {
-		System.out.println("Invalid input. Exiting by default.");
-		isPlaying = false;
-	    }
-
 	    System.out.println("\n");
-	}
-	for (String tea : _teachoices) {
-	    Database.printinformation(tea);
-	    System.out.println();
+	    
+	    for (String tea : _teachoices) {
+		Database.printinformation(tea);
+		System.out.println();
+	    }
+
 	}
     }
-
 }//end
