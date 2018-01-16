@@ -19,35 +19,6 @@ public class Woo {
 
     private static boolean isPlaying = true;
     
-    /* UNNEEDED
-    //Default constructor
-    public Woo() {
-    _teachoices = new String[10];
-    }
-    //Doubt we need this.     
-    //Methods
-    public void Narrow (String sF) {
-    //implementation	
-    }
-    public void populate() {
-    //implementation
-    }
-    public String toString(){
-    return "";
-    //prints out Array TeaChoices
-    }
-    public void playIter() {
-    while ( true ) {
-    System.out.println("Pick a symptom:");
-    for(choice : _choices)
-    System.out.println(choice);
-    }
-    }
-    public void play() {
-    playIter();
-    }
-    */
-    
     //Search (binary)
     public static String[] searchTeas(Tea teas, String sF) {
 	String[] a = {"You","are","mistaked"};
@@ -209,13 +180,15 @@ public class Woo {
 		
 	    }
 	    System.out.println("\n");
-
-	    //print out information
-	    for (String tea : _teachoices) {
-		Database.printinformation(tea);
-		System.out.println();
-	    }
-
+	}
+	//print out information
+	final String ANSI_CLS = "\u001b[2J";
+	final String ANSI_HOME = "\u001b[H";
+	System.out.print(ANSI_CLS + ANSI_HOME);
+	System.out.flush();
+	for (int i = 0; i < Tea.size(_teachoices); i++) {
+	    Database.printinformation(_teachoices[i]);
+	    System.out.println();
 	}
     }
 }//end
