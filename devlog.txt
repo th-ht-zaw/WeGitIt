@@ -51,15 +51,15 @@ MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 We changed ___ to ___ bc...
 - In our proposal, we changed the idea of using interfaces or abstract classes
-for our teas to using 2D arrays.
+  for our teas to using 2D arrays.
 <etc>
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - write ideas down when you have one so you don't forget
 - think about Big-O and memory allocation before writing a method a certain way.
-It's easier to have things straight the first time than working with a lot of
-inefficient (for the coder or for the computer) code.
+- It's easier to have things straight the first time than working with a lot of
+  inefficient (for the coder or for the computer) code.
 - join.me is a lifesaver
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
@@ -112,5 +112,12 @@ Sophia :: Worked on to-do list, discussed flowchart and to-do list
 Lynne :: Finished all array modification methods in Tea.java
 Thet :: Aided and directed Tea.java and Database.java through join.me,
      	researched teas
-Sophia :: Worked on Database.java, researched teas
+Sophia :: finished Database.java, researched teas, got the for loop in populate to work
+===============================================================
+
+2018-01-15
+---------------------------------------------------------------
+Lynne :: Worked on the methods in Woo.java, got the terminal to clear
+Thet :: Worked on the methods and main method in Woo.java
+Sophia :: updated the UML diagram and readME file
 ===============================================================

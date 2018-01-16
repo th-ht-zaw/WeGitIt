@@ -84,7 +84,7 @@ public class Tea {
 	add("digestion" , "awake" , "heart" , "puerh" ); 
     }
     
-    //size()
+    //size(): returns the size if the array
     public static int size(String[] arr){
 	int ct = 0;
 	for(int i = 0; i < arr.length; i++) {
@@ -95,7 +95,7 @@ public class Tea {
 	return ct;
     }
     
-    //addArr
+    //addArrL: adds a row into the 2D array
     public void addArr(String[] newArr){
 	if (_data.length <= _sizeY)
 	    expandY();
@@ -118,7 +118,7 @@ public class Tea {
     }
 
     
-    //Overloaded Add
+    //Overloaded Add version 1
     public void add(String symFlav1, String symFlav2,
 		    String symFlav3, String tea){
 	add(symFlav1, tea);
@@ -138,7 +138,7 @@ public class Tea {
  
     }
     
-    //Expand
+    //ExpandX
     private void expandX(int row){
 	String[] temp = new String[ _data[row].length * 2 ];
 
@@ -147,7 +147,8 @@ public class Tea {
 
 	_data[row] = temp;
     }
-    
+
+    //ExpandY
     private void expandY(){
 	String[][] temp = new String[ _data.length * 2 ][ _data[0].length ];
 
@@ -160,7 +161,7 @@ public class Tea {
 	_data = temp;
     }
     
-    //get
+    //get: returns the array at the designated row
     public String[] get( int row ) {
 	return _data[row];
     }
@@ -177,7 +178,7 @@ public class Tea {
 	return temp;
     }
     
-    //sort
+    //sort: sorts based on alphabetical order
     public void sort() {
 	for( int i = 1; i < _sizeY; i++ ) {
 	    for( int x = i; x > 0; x-- ) {
@@ -203,7 +204,7 @@ public class Tea {
 	return _data[1]; //Just for the code to work
     }
     
-    //main
+    //main for testing
     public static void main (String[] args) {
 	Tea teas = new Tea();
 	teas.populate();

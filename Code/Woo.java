@@ -4,57 +4,50 @@ import cs1.Keyboard;
 public class Woo {
 
     //instance vars
-    private static final String[] _tealist = new String[10]; //may not be final if user adds tea, list of teas
-    private static String[] _choices = {"white","green","black","oolong",
-					"herbal","digestion",
-					"relaxation","nausea","sleep",
-					"awake","skin","immune",
-					"heart","circulation",
+    private static final String[] _tealist = new String[10];
+    //may not be final if user adds tea, list of teas
+    private static String[] _choices = {"white","green","black","oolong","herbal",
+					"digestion","relaxation","nausea","sleep",
+					"awake","skin","immune","heart","circulation",
 					"metabolism"};
 
-    private static String[] _teachoices = {"assam", "chamomile" , "darjeeling" , "keemun" , "sencha" , "silver_needle" ,
-					   "matcha" , "ginger" , "ginseng" , "peppermint" , "bai_mudan" ,
-					   "water_sprite" , "high_mountain" , "puerh" };
+    private static String[] _teachoices = {"assam", "chamomile", "darjeeling", "keemun", "sencha",
+					   "silver_needle", "matcha", "ginger", "ginseng", "peppermint",
+					   "bai_mudan", "water_sprite", "high_mountain", "puerh" };
 
     private static String[] selections = new String[15];
 
     private static boolean isPlaying = true;
-
-    //Default constructor
-    /*
-      public Woo() {
-      _teachoices = new String[10];
-      }
-    */ //Doubt we need this. 
     
+    /* UNNEEDED
+    //Default constructor
+    public Woo() {
+    _teachoices = new String[10];
+    }
+    //Doubt we need this.     
     //Methods
     public void Narrow (String sF) {
-	//implementation	
+    //implementation	
     }
-
     public void populate() {
-	//implementation
+    //implementation
     }
-
     public String toString(){
-	return "";
-	//prints out Array TeaChoices
+    return "";
+    //prints out Array TeaChoices
     }
-    
-    /*
-      public void playIter() {
-      while ( true ) {
-      System.out.println("Pick a symptom:");
-      for(choice : _choices)
-      System.out.println(choice);
-      }
-      }
-    
-      public void play() {
-      playIter();
-      }
+    public void playIter() {
+    while ( true ) {
+    System.out.println("Pick a symptom:");
+    for(choice : _choices)
+    System.out.println(choice);
+    }
+    }
+    public void play() {
+    playIter();
+    }
     */
-
+    
     //Search (binary)
     public static String[] searchTeas(Tea teas, String sF) {
 	String[] a = {"You","are","mistaked"};
@@ -74,6 +67,8 @@ public class Woo {
 	return a;
     }
 
+    //hasA: returns true if the array has that string
+    //      otherwise it returns false
     public static boolean hasA(String str, String[] strArr) {
 	for (int i = 0 ; i < Tea.size(strArr) ; i++ ) {
 	    if (str.equals(strArr[i])) {
@@ -83,6 +78,7 @@ public class Woo {
 	return false;
     }
 
+    //trims
     public static void trims(String[] teas, Tea Table) {
 	String[] newChoices = new String[15];
 	for (int i = 0; i < Tea.size(teas); i++)
@@ -93,6 +89,7 @@ public class Woo {
 	_choices = newChoices;	
     }
 
+    //trimTea
     public static void trimTea(String[] teas) {
 	String[] newChoices = new String[15];
 	for (int i = 0 ; i < Tea.size(_teachoices) ; i++ ) {
@@ -103,6 +100,7 @@ public class Woo {
 	_teachoices = newChoices;
     } 
 
+    //expand
     private static void expand(String[] arr)
     {
 	String[] temp = new String[ arr.length * 2 ];
@@ -113,7 +111,8 @@ public class Woo {
 	arr = temp;
     }
 
-    
+
+    //add
     public static void add(String[] arr, String str )
     {
 	//first expand if necessary
@@ -126,12 +125,15 @@ public class Woo {
     
     //main
     public static void main (String[] args) {
+
+	//populates the 2D array
 	Tea table = new Tea();
 	table.populate();
 	table.sort();
 	
 	while (isPlaying) {
 	    
+	    //clears the terminal
 	    final String ANSI_CLS = "\u001b[2J";
 	    final String ANSI_HOME = "\u001b[H";
 	    System.out.print(ANSI_CLS + ANSI_HOME);
@@ -146,12 +148,14 @@ public class Woo {
 
 	    System.out.println("\n");
 
+	    //Prints out a list of what traits the user can choose from
 	    System.out.println("YOUR SELECTIONS: ");
 	    for( int i = 0; i < Tea.size(selections); i++ )
 		System.out.print(selections[i] + "  ");
 
 	    System.out.println("\n");
-	    
+
+	    //Prompts the user to select a trait
 	    System.out.println("PICK A TRAIT (type the trait): ");
 	    for( int i = 0; i < Tea.size(_choices); i++ )
 		System.out.print(_choices[i] + "  ");
@@ -159,28 +163,33 @@ public class Woo {
 	    System.out.println("\n");
 	    
 	    choice = Keyboard.readString();
-	    
+
+	    //in the case of an invalid input
 	    if (! (hasA(choice, _choices) ) ) {
 		System.out.println("Invalid input. Try again.");
 		continue;
 	    }
-		
+
+	    //adds what the user picked to an array of what the user has picked
 	    add(selections, choice);
 	    System.out.println("\nYOUR CHOICE: " + choice);
-	    
+
+
 	    String[] row = searchTeas(table, choice);
-	
+	    
 	    trims(row, table);
 	    trimTea(row);
 
+	    //prints out what teas fit the users criteria so far
 	    System.out.println("\nCURRENT TEA CHOICES: ");
 	    for (int i = 0; i < Tea.size(_teachoices) ; i++ )
 		System.out.print(_teachoices[i] + "  ");
 
+	    //asks the user whether or not to continue
 	    System.out.println("");
 	    System.out.println("\nDo you want to select more traits?");
 	    System.out.println("\nType 0 for yes or type 1 for no" + "\n");
-
+	    
 
 	    int selection;
 	    outer: while (true) {
@@ -200,7 +209,8 @@ public class Woo {
 		
 	    }
 	    System.out.println("\n");
-	    
+
+	    //print out information
 	    for (String tea : _teachoices) {
 		Database.printinformation(tea);
 		System.out.println();
