@@ -1,41 +1,63 @@
+/*
+- Driver class
+- Contains: 
+  - searchTeas
+  - hasA
+  - trims
+  - trimTea
+  - expand
+  - add
+  - printInfo()
+  - playSelection()
+  - playStats()
+  - play()
+ */
+
 import cs1.Keyboard;
 
 //Driver
 public class Woo {
 
-    //instance vars
+    //INSTANCE VARS
     private static final String[] _tealist = new String[10];
     //may not be final if user adds tea, list of teas
 
+    //_choicesF - final symptom/flavor choices
     private static final String[] _choicesF = {"white","green","black","oolong","herbal",
 					"indigestion","stress","nausea","insomnia",
 					"exhaustion","bad_skin","immunodeficiency","cardiac_disease","poor_circulation",
 					"slow_metabolism"};
 
+
+    //_teaChoicesF - final tea choices
     private static final String[] _teachoicesF = {"assam", "chamomile", "darjeeling", "keemun", "sencha",
 					   "silver_needle", "matcha", "ginger", "ginseng", "peppermint",
 					   "bai_mudan", "water_sprite", "high_mountain", "puerh" };
-    
+
+    //_choices - symptom/flavor choices
     private static String[] _choices = {"white","green","black","oolong","herbal",
 					"indigestion","stress","nausea","insomnia",
 					"exhaustion","bad_skin","immunodeficiency","cardiac_disease","poor_circulation",
 					"slow_metabolism"};
 
+    //_teachoices - tea choices
     private static String[] _teachoices = {"assam", "chamomile", "darjeeling", "keemun", "sencha",
 					   "silver_needle", "matcha", "ginger", "ginseng", "peppermint",
 					   "bai_mudan", "water_sprite", "high_mountain", "puerh" };
 
-    private static String[] selections;
+    private static String[] selections; //what the user has already entered
 
-    private static boolean isPlaying = true;
+    private static boolean isPlaying = true; //is tea search activity chosem?
 
-    private static boolean wantsInfo = true;
+    private static boolean wantsInfo = true; //does the user want tea info printed out?
 
-    private static boolean stats = true;
+    private static boolean stats = true; //is health stats activity chosen?
 
-    private static boolean game = true;
-    
-    //Search (binary)
+    private static boolean game = true; //is user still in game?
+
+
+    //METHODS
+    //Binary search through the String[] of teas
     public static String[] searchTeas(Tea teas, String sF) {
 	String[] a = {"You","are","mistaked"};
 	int lo = 0;
@@ -65,7 +87,7 @@ public class Woo {
 	return false;
     }
 
-    //trims
+    //trims: trims _choices based on user input
     public static void trims(String[] teas, Tea Table) {
 	String[] newChoices = new String[15];
 	for (int i = 0; i < Tea.size(teas); i++)
@@ -76,7 +98,7 @@ public class Woo {
 	_choices = newChoices;	
     }
 
-    //trimTea
+    //trimTea: trims _teaChoices based on what symptom/flavor user inputs
     public static void trimTea(String[] teas) {
 	String[] newChoices = new String[15];
 	for (int i = 0 ; i < Tea.size(_teachoices) ; i++ ) {
@@ -87,7 +109,7 @@ public class Woo {
 	_teachoices = newChoices;
     } 
 
-    //expand
+    //expand - doubles length of a String array
     private static void expand(String[] arr)
     {
 	String[] temp = new String[ arr.length * 2 ];
@@ -112,7 +134,7 @@ public class Woo {
     //Tea info printer
     public static void printInfo() {
 	if (wantsInfo) {
-	    //print out information
+	    //clears the terminal
 	    final String ANSI_CLS = "\u001b[2J";
 	    final String ANSI_HOME = "\u001b[H";
 	    System.out.print(ANSI_CLS + ANSI_HOME);
@@ -244,7 +266,7 @@ public class Woo {
     }
 
 
-    //Health Stats
+    //Health Stats Activity
     public static void playStats() {
 
 	if (stats) {
@@ -350,6 +372,7 @@ public class Woo {
 
     //play
     public static void play() {
+	
 	//clears the terminal
 	final String ANSI_CLS = "\u001b[2J";
 	final String ANSI_HOME = "\u001b[H";
