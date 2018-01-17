@@ -133,7 +133,7 @@ public class Woo {
 
 	    System.out.println("\n");
 	    
-	    choice = Keyboard.readString();
+	    choice = Keyboard.readString().toLowerCase();
 
 	    //in the case of an invalid input
 	    if (! (hasA(choice, _choices) ) ) {
