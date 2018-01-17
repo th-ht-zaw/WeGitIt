@@ -1,3 +1,18 @@
+/*
+- Tea class contains methods for manipulating the table (2D array) of 
+symptoms/flavors and their corresponding teas
+- Includes:
+  - populate
+  - size (of String[])
+  - addArr (add array)
+  - add (add element)
+  - expandX
+  - expandY
+  - get
+  - sort
+  - locate
+ */
+
 public class Tea {
 
     //Instance Variables
@@ -195,7 +210,7 @@ public class Tea {
 	}
     }
 
-    //locate (basically get but with Strings)
+    //locate (basically get but with a String parameter)
     public String[] locate(String symFlav) {
 	for (int i = 0 ; i < _sizeY ; i++ ) {
 	    if (symFlav.equals(_data[i][0])) {
