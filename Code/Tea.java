@@ -22,12 +22,14 @@ public class Tea {
     }
     
     //Methods
-    //populate (combines all helper methods
+    //populate (combines all helper methods to populate the 2d array)
     public void populate() {
+	
 	String[] traits = { "white", "green", "black", "oolong", "herbal" ,
 			    "indigestion", "stress", "nausea", "insomnia",
 			    "exhaustion" , "bad_skin" , "immunodeficiency" ,"cardiac_disease" ,
 			    "poor_circulation", "slow_metabolism" };
+	
 	for (int i = 0; i < traits.length ; i++ ) {
 	    String arr[] = {traits[i]};
 	    addArr(arr);
@@ -84,7 +86,7 @@ public class Tea {
 	add("indigestion" , "exhaustion" , "cardiac_disease" , "puerh" ); 
     }
     
-    //size(): returns the size if the array
+    //size(): returns the size of the string array
     public static int size(String[] arr){
 	int ct = 0;
 	for(int i = 0; i < arr.length; i++) {
@@ -138,7 +140,7 @@ public class Tea {
  
     }
     
-    //ExpandX
+    //ExpandX (expand a row)
     private void expandX(int row){
 	String[] temp = new String[ _data[row].length * 2 ];
 
@@ -148,7 +150,7 @@ public class Tea {
 	_data[row] = temp;
     }
 
-    //ExpandY
+    //ExpandY (expand number of rows)
     private void expandY(){
 	String[][] temp = new String[ _data.length * 2 ][ _data[0].length ];
 
@@ -166,19 +168,19 @@ public class Tea {
 	return _data[row];
     }
 
-    //Overloaded get
+    //Overloaded get (returns element at a specific row and column)
     public String get( int row, int col ) {
 	return _data[row][col];
     }
     
-    //set
+    //set an index to a new String array
     public String[] set( int index, String[] newVal ) {
 	String[] temp = _data[index];
 	_data[index] = newVal;
 	return temp;
     }
     
-    //sort: sorts based on alphabetical order
+    //insertion sort: sort by alphabetical order
     public void sort() {
 	for( int i = 1; i < _sizeY; i++ ) {
 	    for( int x = i; x > 0; x-- ) {
@@ -202,18 +204,5 @@ public class Tea {
 	}
 	System.out.println("Error: Trait does not exist");
 	return _data[1]; //Just for the code to work
-    }
-    
-    //main for testing
-    public static void main (String[] args) {
-	Tea teas = new Tea();
-	teas.populate();
-	teas.sort();
-	System.out.println(teas);
-
-	for (int i = 0 ; i < size(teas.locate("indigestion")) ; i++ ) {
-	    System.out.println(teas.locate("indigestion")[i]);
-	}
-
     }
 }
