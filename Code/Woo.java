@@ -312,7 +312,7 @@ public class Woo {
 	    outer: while (true) {
 		System.out.println("POUNDS YOU'D LIKE TO LOSE:");
 		pounds = Keyboard.readInt();
-		if (! (pounds >= 0 || pounds > weight - pounds) ) {
+		if (! (pounds >= 0 && pounds > weight - pounds) ) {
 		    System.out.println("Invalid input. Type an appropriate goal.");
 		    continue;
 		}

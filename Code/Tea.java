@@ -1,8 +1,8 @@
 public class Tea {
 
     //Instance Variables
-    public String[][] _data; //will hardcode symFlav
-    protected int _sizeY;
+    public String[][] _data; //stores symptoms and flavors the user can choose from
+    protected int _sizeY; //number of significant (non-null) rows
     
     //Default Constructor
     public Tea() {
