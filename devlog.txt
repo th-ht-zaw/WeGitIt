@@ -45,12 +45,23 @@ COOL STUFF LEARNED
 - compareTo can sort Strings by unicode (alphabetical order)
 - join.me is really good for team collaboration and having a driver when we're
   not physically together
+- We can "clear" the terminal screen (start text at the top of the page) using ANSI and System.out.flush()
+- Although we touched on the use of outer and middle and inner in loops in class, we were really able to fully flesh them out for error handling in Woo
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 We changed ___ to ___ bc...
 - In our proposal, we changed the idea of using interfaces or abstract classes
-  for our teas to using 2D arrays.
+  for our teas to using 2D arrays bc it would be more efficient than creating a
+  separate class for each tea.
+- We added a Calculator class to our Tea Activity Bucket because we thought it
+  would be fun for a user to be able to calculate their metabolism and
+  BMI and perhaps decide to drink more tea after they see their results.
+  We also decided to include an option for users to input how many pounds
+  thet'd like to lose and see how many days of drinking tea they'd need to
+  lose that much weight considering they change nothing else.
+- We ended up adding more helper methods to Woo and Tea bc it helped us
+  organize our code.
 
 
 LESSONS LEARNED
