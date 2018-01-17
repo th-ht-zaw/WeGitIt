@@ -6,6 +6,16 @@ public class Woo {
     //instance vars
     private static final String[] _tealist = new String[10];
     //may not be final if user adds tea, list of teas
+
+    private static final String[] _choicesF = {"white","green","black","oolong","herbal",
+					"indigestion","stress","nausea","insomnia",
+					"exhaustion","bad_skin","immunodeficiency","cardiac_disease","poor_circulation",
+					"slow_metabolism"};
+
+    private static final String[] _teachoicesF = {"assam", "chamomile", "darjeeling", "keemun", "sencha",
+					   "silver_needle", "matcha", "ginger", "ginseng", "peppermint",
+					   "bai_mudan", "water_sprite", "high_mountain", "puerh" };
+    
     private static String[] _choices = {"white","green","black","oolong","herbal",
 					"indigestion","stress","nausea","insomnia",
 					"exhaustion","bad_skin","immunodeficiency","cardiac_disease","poor_circulation",
@@ -15,7 +25,7 @@ public class Woo {
 					   "silver_needle", "matcha", "ginger", "ginseng", "peppermint",
 					   "bai_mudan", "water_sprite", "high_mountain", "puerh" };
 
-    private static String[] selections = new String[15];
+    private static String[] selections;
 
     private static boolean isPlaying = true;
 
@@ -120,6 +130,8 @@ public class Woo {
 	Tea table = new Tea();
 	table.populate();
 	table.sort();
+
+	selections = new String[15];
 	
 	while (isPlaying) {
 	    
@@ -372,6 +384,8 @@ public class Woo {
     //main
     public static void main (String[] args) {
 	outer: while (game) {
+	    _teachoices = _teachoicesF;
+	    _choices = _choicesF;
 	    isPlaying = true;
 	    stats = true;
 	    play();
