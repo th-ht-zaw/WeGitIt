@@ -251,7 +251,7 @@ public class Keyboard
       } 
       catch (Exception exception) 
       {
-         error ("Invalid input. Enter 0 or 1.");
+         error ("Invalid input. Enter a positive integer.");
          value = Integer.MIN_VALUE;
       }
       return value;

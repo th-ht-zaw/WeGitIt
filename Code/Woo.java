@@ -18,6 +18,12 @@ public class Woo {
     private static String[] selections = new String[15];
 
     private static boolean isPlaying = true;
+
+    private static boolean wantsInfo = true;
+
+    private static boolean stats = true;
+
+    private static boolean game = true;
     
     //Search (binary)
     public static String[] searchTeas(Tea teas, String sF) {
@@ -92,11 +98,24 @@ public class Woo {
 
         arr[Tea.size(arr)] = str;
     }
-    
-    
-    //main
-    public static void main (String[] args) {
 
+    //Tea info printer
+    public static void printInfo() {
+	if (wantsInfo) {
+	    //print out information
+	    final String ANSI_CLS = "\u001b[2J";
+	    final String ANSI_HOME = "\u001b[H";
+	    System.out.print(ANSI_CLS + ANSI_HOME);
+	    System.out.flush();
+	    for (int i = 0; i < Tea.size(_teachoices); i++) {
+		Database.printinformation(_teachoices[i]);
+		System.out.println("\n");
+	    }
+	}
+    }
+
+    //Flavor and Symptom Selection Loop
+    public static void playSelection() {
 	//populates the 2D array
 	Tea table = new Tea();
 	table.populate();
@@ -181,17 +200,195 @@ public class Woo {
 		    break outer;
 		
 	    }
-
-	    System.out.println("\n");
 	}
-	//print out information
+
+	if (! stats) {
+	    //asks the user whether or not to continue
+	    System.out.println("");
+	    System.out.println("\nDo you want to see information about your teas?");
+	    System.out.println("\nType 0 for yes or type 1 for no" + "\n");
+	
+	    int yesNo;
+	       
+	    outer: while (true) {
+		yesNo = Keyboard.readInt();
+		if (yesNo == 1) {
+		    wantsInfo = false;
+		    break outer;
+		}
+	        
+		else if (yesNo > 1 || yesNo < 0) {
+		    System.out.println("Invalid input. Type 0 for yes or type 1 for no.");
+		    continue outer;
+		}
+		
+		else
+		    break outer;
+		
+	    }
+	    System.out.println("\n");
+	    printInfo();
+        }
+    }
+
+
+    //Health Stats
+    public static void playStats() {
+
+	if (stats) {
+
+	    //clears the terminal
+	    final String ANSI_CLS = "\u001b[2J";
+	    final String ANSI_HOME = "\u001b[H";
+	    System.out.print(ANSI_CLS + ANSI_HOME);
+	    System.out.flush();
+	    
+	    System.out.println("ENTER YOUR STATS:\n");
+
+	    System.out.println("SEX (type male or female):");
+	    String sex;
+	    outer: while (true) {
+		String[] sexes = {"male","female"};
+		sex = Keyboard.readString().toLowerCase();
+		if (! (hasA(sex, sexes) ) ) {
+		    System.out.println("Invalid input. Type male or female.");
+		    continue;
+		}
+		else
+		    break outer;
+	    }
+
+	    int age;
+	    outer: while (true) {
+		System.out.println("AGE:");
+		age = Keyboard.readInt();
+		if (! (age > 0 && age < 150) ) {
+		    System.out.println("Invalid input. Type appropriate age.");
+		    continue;
+		}
+		else
+		    break outer;
+	    }
+
+	    int weight;
+	    outer: while (true) {
+		System.out.println("WEIGHT (to nearest pound):");
+		weight = Keyboard.readInt();
+		if (! (weight > 0 && weight < 2000) ) {
+		    System.out.println("Invalid input. Type appropriate weight.");
+		    continue;
+		}
+		else
+		    break outer;
+	    }
+
+	    int height;
+	    outer: while (true) {
+		System.out.println("HEIGHT (to nearest inch):");
+		height = Keyboard.readInt();
+		if (! (height > 0 && height < 150) ) {
+		    System.out.println("Invalid input. Type appropriate height.");
+		    continue;
+		}
+		else
+		    break outer;
+	    }
+
+	    int exercise;
+	    outer: while (true) {
+		System.out.println("ACTIVITY LEVEL (enter corresponding number:");
+		System.out.print("1: Little or no exercise\n2: Light Exercise/sports 1-3 days/week\n3: Medium Exercise/sports 3-5 days/week\n4: Hard Exercise/sports 6-7 days/week\n5: Intense exercise/sports, physical job or twice/day training\n");
+		exercise = Keyboard.readInt();
+		if (! (exercise == 1 || exercise == 2 || exercise == 3 || exercise
+		       == 4 || exercise == 5) ) {
+		    System.out.println("Invalid input. Type a number from 1-5.");
+		    continue;
+		}
+		else
+		    break outer;
+	    }
+
+	    int pounds;
+	    outer: while (true) {
+		System.out.println("POUNDS YOU'D LIKE TO LOSE:");
+		pounds = Keyboard.readInt();
+		if (! (pounds >= 0 || pounds > weight - pounds) ) {
+		    System.out.println("Invalid input. Type an appropriate goal.");
+		    continue;
+		}
+		else
+		    break outer;
+	    }
+
+	    int bmi = Calculator.BMI( weight, height );
+	    int bmr = Calculator.BMR( sex, age, weight, height );
+	    
+	    System.out.print("BMI: ");
+	    System.out.println(bmi);
+	    System.out.print("BMI RANGE: ");
+	    System.out.println( Calculator.BMIRange( bmi ) );
+	    System.out.print("BMR: ");
+	    System.out.println(bmr);
+	    System.out.print("DAILY CALORIE INTAKE: ");
+	    System.out.println( Calculator.calIntake( bmr, exercise ) );
+	    System.out.print("HOW MANY DAYS OF TEA-DRINKING TO LOSE " + pounds + " POUNDS (at 2.5 cups of tea per day): ");
+	    System.out.println( Calculator.days( pounds ) );
+	}
+    }
+
+    //play
+    public static void play() {
+	//clears the terminal
 	final String ANSI_CLS = "\u001b[2J";
 	final String ANSI_HOME = "\u001b[H";
 	System.out.print(ANSI_CLS + ANSI_HOME);
 	System.out.flush();
-	for (int i = 0; i < Tea.size(_teachoices); i++) {
-	    Database.printinformation(_teachoices[i]);
-	    System.out.println();
+	
+	System.out.println("Would you like to get your health stats/lose weight or relieve your ailments? \nType 0 to get health stats and/or develop a tea weight-loss plan. \nType 1 to relieve your ailments with tea.");
+
+        int selection;
+	       
+	outer: while (true) {
+	    selection = Keyboard.readInt();
+	    if (selection == 1) {
+		stats = false;
+		break outer;
+	    }
+	        
+	    else if (selection > 1 || selection < 0) {
+		System.out.println("Invalid input. Type 0 for yes or type 1 for no.");
+		continue outer;
+	    }
+		
+	    else
+		isPlaying = false;
+	    break outer;
+		
+	}
+	playStats();
+	playSelection();
+    }
+    
+    //main
+    public static void main (String[] args) {
+	outer: while (game) {
+	    isPlaying = true;
+	    stats = true;
+	    play();
+	    System.out.println("PLAY AGAIN? If yes, type 0. If no, type 1.");
+	    int toPlay;
+	    inner: while (true) {
+		toPlay = Keyboard.readInt();
+		if (! (toPlay == 0 || toPlay == 1) ) {
+		    System.out.println("Invalid input. Type 0 or 1.");
+		    continue;
+		}
+		else if (toPlay == 0)
+		    break inner;
+		else
+		    break outer;
+	    }
+	    
 	}
     }
 }//end
