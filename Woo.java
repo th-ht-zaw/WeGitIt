@@ -1,6 +1,6 @@
 /*
-- Driver class
-- Contains: 
+  - Driver class
+  - Contains: 
   - searchTeas
   - hasA
   - trims
@@ -11,7 +11,7 @@
   - playSelection()
   - playStats()
   - play()
- */
+*/
 
 import cs1.Keyboard;
 
@@ -24,15 +24,15 @@ public class Woo {
 
     //_choicesF - final symptom/flavor choices
     private static final String[] _choicesF = {"white","green","black","oolong","herbal",
-					"indigestion","stress","nausea","insomnia",
-					"exhaustion","bad_skin","immunodeficiency","cardiac_disease","poor_circulation",
-					"slow_metabolism"};
+					       "indigestion","stress","nausea","insomnia",
+					       "exhaustion","bad_skin","immunodeficiency","cardiac_disease","poor_circulation",
+					       "slow_metabolism"};
 
 
     //_teaChoicesF - final tea choices
     private static final String[] _teachoicesF = {"assam", "chamomile", "darjeeling", "keemun", "sencha",
-					   "silver_needle", "matcha", "ginger", "ginseng", "peppermint",
-					   "bai_mudan", "water_sprite", "high_mountain", "puerh" };
+						  "silver_needle", "matcha", "ginger", "ginseng", "peppermint",
+						  "bai_mudan", "water_sprite", "high_mountain", "puerh" };
 
     //_choices - symptom/flavor choices
     private static String[] _choices = {"white","green","black","oolong","herbal",
