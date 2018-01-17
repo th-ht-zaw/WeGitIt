@@ -31,13 +31,14 @@ OBSTACLES OVERCOME
 - Different people, at different locations, but working on the same file at the same time 
   join.me saved us a lot of anguish as it let us have one driver while the other two people watched, commented, and assisted with the coding. 
   It even has a function where the viewers could take control of the presenter's computer and code in their place. 
+- User understanding: 
+  We noticed that a lot of the traits we chose were unclear. We have a mix of symptoms the tea could help remedy, actions the tea could assist in,
+  and the type of tea a certain tea was. This was made even clearer when Connie looked at our terminal and got confused. So we chose to rename the symptoms
+  such that they fell into two groups, "Tea Families" the types of tea it was, and "Symptoms", symptoms or problems the tea could help remedy. 
   
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<
-blah blah pesky bug...
-maybe some of these will move into the Obs.Ovrcm section...
->
+- None
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
