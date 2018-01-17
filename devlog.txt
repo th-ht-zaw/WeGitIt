@@ -122,3 +122,10 @@ Lynne :: Worked on the methods in Woo.java, got the terminal to clear
 Thet :: Worked on the methods and main method in Woo.java
 Sophia :: updated the UML diagram and readME file
 ===============================================================
+
+2018-01-16
+---------------------------------------------------------------
+Lynne :: Worked on Calculator.java and got Woo.java to work with it
+Thet :: Made the instructions for the user more clear and understandable
+Sophia :: updated the UML diagram and readME file, tested for errors
+===============================================================
