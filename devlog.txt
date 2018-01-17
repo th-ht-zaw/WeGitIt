@@ -71,7 +71,9 @@ LESSONS LEARNED
 - It's easier to have things straight the first time than working with a lot of
   inefficient (for the coder or for the computer) code.
 - join.me is a lifesaver
-- Having the flowchart really helped organize our thoughts and guide our process. We managed to stay close to the flowchart the entire project. 
+- Having the flowchart really helped organize our thoughts and guide our process. We managed to stay close to the flowchart the entire project.
+- You must play the troll/dumb user to find all the bugs in your code.
+- We have achieved flow.
 
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
