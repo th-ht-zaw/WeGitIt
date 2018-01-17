@@ -1,10 +1,16 @@
-import cs1.Keyboard;
+/*
+- A class that calculates various stats based on user input
+- Includes:
+  - BMI
+  - BMI Range
+  - BMR
+  - Daily caloric intake
+  - Days of drinking tea needed to lose x pounds
+ */
 
 public class Calculator {
-
-    //Instance vars
-
-    //methods
+    
+    //METHODS
 
     //BMI (Body Mass Index)
     public static int BMI( int weight, int height) {
@@ -52,43 +58,11 @@ public class Calculator {
 	return (int) cals;
     }
 
-    //Teas per day calculator (about 100 calories burned a day, ~2.5 cups)
+    //Days to drink tea calculator (about 100 calories burned a day, ~2.5 cups)
     public static int days( int pounds ) {
 	int calsToBurn = pounds * 3500;
 	int days = calsToBurn / 100;
 	return days;
-    }
-    
-    //main
-    public static void main(String[] args) {
-
-	String sex;
-	sex = Keyboard.readString();
-
-	int age;
-	age = Keyboard.readInt();
-	
-	int weight;
-	weight = Keyboard.readInt();
-
-	int height;
-	height = Keyboard.readInt();
-
-	int exercise;
-	exercise = Keyboard.readInt();
-
-	int pounds;
-	pounds = Keyboard.readInt();
-
-	int bmi = BMI( weight, height );
-	int bmr = BMR( sex, age, weight, height );
-	
-	System.out.println(bmi);
-	System.out.println( BMIRange( bmi ) );
-	System.out.println(bmr);
-	System.out.println( calIntake( bmr, exercise ) );
-	System.out.println( days( pounds ) );
-	
     }
     
 }//end
