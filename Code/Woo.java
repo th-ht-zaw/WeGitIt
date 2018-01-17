@@ -18,8 +18,6 @@ public class Woo {
     private static String[] selections = new String[15];
 
     private static boolean isPlaying = true;
-
-    private static int[] numchoices = {0,1};
     
     //Search (binary)
     public static String[] searchTeas(Tea teas, String sF) {
@@ -45,15 +43,6 @@ public class Woo {
     public static boolean hasA(String str, String[] strArr) {
 	for (int i = 0 ; i < Tea.size(strArr) ; i++ ) {
 	    if (str.equals(strArr[i])) {
-		return true;
-	    }
-	}
-	return false;
-    }
-
-    public static boolean hasA(int num, int[] numArr) {
-	for (int i = 0 ; i < Tea.size(numArr) ; i++ ) {
-	    if (num.equals(numArr[i])) {
 		return true;
 	    }
 	}
@@ -138,8 +127,13 @@ public class Woo {
 	    System.out.println("\n");
 
 	    //Prompts the user to select a trait
-	    System.out.println("PICK A TRAIT (type the trait): ");
-	    for( int i = 0; i < Tea.size(_choices); i++ )
+	    System.out.println("PICK A TEA FAMILY OR A SYMPTOM (type your selection at the cursor): ");
+	    System.out.println("*******************************************************");
+	    System.out.print("TEA FAMILIES: ");
+	    for( int i = 0; i < 5; i++ )
+		System.out.print(_choices[i] + "  ");
+	    System.out.print("\nSYMPTOMS: ");
+	    for( int i = 5; i < Tea.size(_choices); i++ )
 		System.out.print(_choices[i] + "  ");
 
 	    System.out.println("\n");
@@ -174,17 +168,7 @@ public class Woo {
 	    
 
 	    int selection;
-	    selection = Keyboard.readInt();
-	    if (! (hasA(selection, _choices) ) ) {
-		System.out.println("Invalid input. Try again.");
-		continue;
-	    }
-
-	    else
-		if (selection == 1)
-		    isPlaying = false;
-	        
-	    /*
+	       
 	    outer: while (true) {
 		selection = Keyboard.readInt();
 		if (selection == 1) {
@@ -201,7 +185,7 @@ public class Woo {
 		    break outer;
 		
 	    }
-	    */
+
 	    System.out.println("\n");
 	}
 	//print out information
