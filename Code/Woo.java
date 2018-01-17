@@ -128,12 +128,8 @@ public class Woo {
 
 	    //Prompts the user to select a trait
 	    System.out.println("PICK A TEA FAMILY OR A SYMPTOM (type your selection at the cursor): ");
-	    System.out.println("*******************************************************");
-	    System.out.print("TEA FAMILIES: ");
-	    for( int i = 0; i < 5; i++ )
-		System.out.print(_choices[i] + "  ");
-	    System.out.print("\nSYMPTOMS: ");
-	    for( int i = 5; i < Tea.size(_choices); i++ )
+	    System.out.println("**********************************************************************");
+	    for( int i = 0; i < Tea.size(_choices); i++ )
 		System.out.print(_choices[i] + "  ");
 
 	    System.out.println("\n");
