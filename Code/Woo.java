@@ -7,9 +7,9 @@ public class Woo {
     private static final String[] _tealist = new String[10];
     //may not be final if user adds tea, list of teas
     private static String[] _choices = {"white","green","black","oolong","herbal",
-					"digestion","relaxation","nausea","sleep",
-					"awake","skin","immune","heart","circulation",
-					"metabolism"};
+					"indigestion","stress","nausea","insomnia",
+					"exhaustion","bad_skin","immunodeficiency","cardiac_disease","poor_circulation",
+					"slow_metabolism"};
 
     private static String[] _teachoices = {"assam", "chamomile", "darjeeling", "keemun", "sencha",
 					   "silver_needle", "matcha", "ginger", "ginseng", "peppermint",

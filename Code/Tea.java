@@ -25,63 +25,63 @@ public class Tea {
     //populate (combines all helper methods
     public void populate() {
 	String[] traits = { "white", "green", "black", "oolong", "herbal" ,
-			    "digestion", "relaxation", "nausea", "sleep",
-			    "awake" , "skin" , "immune" ,"heart" ,
-			    "circulation", "metabolism" };
+			    "indigestion", "stress", "nausea", "insomnia",
+			    "exhaustion" , "bad_skin" , "immunodeficiency" ,"cardiac_disease" ,
+			    "poor_circulation", "slow_metabolism" };
 	for (int i = 0; i < traits.length ; i++ ) {
 	    String arr[] = {traits[i]};
 	    addArr(arr);
 	}
 
 	//Adding assam
-	add("black", "awake" , "skin" , "heart", "metabolism",  "assam");
-	add("awake", "circulation" , "digestion" , "assam");
+	add("black", "exhaustion" , "bad_skin" , "cardiac_disease", "slow_metabolism",  "assam");
+	add("exhaustion", "poor_circulation" , "indigestion" , "assam");
 	
 	//Adding chamomile
-	add("herbal", "relaxation", "digestion" , "sleep", "nausea", "chamomile");
+	add("herbal", "stress", "indigestion" , "insomnia", "nausea", "chamomile");
 
 	//Adding darjeeling
-	add("black" , "digestion" , "awake" , "heart" , "metabolism" , "darjeeling" );
+	add("black" , "indigestion" , "exhaustion" , "cardiac_disease" , "slow_metabolism" , "darjeeling" );
 
 	//Adding keemun
-	add("black" , "digestion" , "awake" , "heart" , "metabolism" , "keemun" );
+	add("black" , "indigestion" , "exhaustion" , "cardiac_disease" , "slow_metabolism" , "keemun" );
 
 	//Adding sencha
-	add("green" , "relaxation" , "immune" , "sencha" );
-	add( "metabolism" , "sencha" ); 
+	add("green" , "stress" , "immunodeficiency" , "sencha" );
+	add( "slow_metabolism" , "sencha" ); 
 
 	//Adding silver needle
-	add("white" , "digestion", "awake" , "silver_needle" );
-	add("immune" , "heart" , "metabolism" , "silver_needle" );
+	add("white" , "indigestion", "exhaustion" , "silver_needle" );
+	add("immunodeficiency" , "cardiac_disease" , "slow_metabolism" , "silver_needle" );
 
 	//Adding matcha
-	add("green" , "skin" , "relaxation" , "matcha");
-	add("immune" , "matcha");
+	add("green" , "bad_skin" , "stress" , "matcha");
+	add("immunodeficiency" , "matcha");
 
 	//Adding ginger
-	add("herbal" , "nausea" , "immune" , "heart" , "circulation" , "ginger" );
-	add("metabolism" , "ginger" );
+	add("herbal" , "nausea" , "immunodeficiency" , "cardiac_disease" , "poor_circulation" , "ginger" );
+	add("slow_metabolism" , "ginger" );
 
 	//Adding ginseng
-	add("herbal" , "digestion" , "relaxation" , "skin" , "metabolism" , "ginseng");
+	add("herbal" , "indigestion" , "stress" , "bad_skin" , "slow_metabolism" , "ginseng");
 
 	//Adding peppermint
-	add("herbal" , "sleep" , "digestion" , "relaxation" , "nausea" , "peppermint" );
-	add("immune" , "peppermint");
-	add("metabolism", "peppermint");
+	add("herbal" , "insomnia" , "indigestion" , "stress" , "nausea" , "peppermint" );
+	add("immunodeficiency" , "peppermint");
+	add("slow_metabolism", "peppermint");
 
 	//Adding bai mudan
-	add("white", "immune" , "heart" , "bai_mudan");
+	add("white", "immunodeficiency" , "cardiac_disease" , "bai_mudan");
 
 	//Adding water sprite
-	add("oolong" , "relaxation" , "awake" , "immune" , "heart" , "water_sprite" );
+	add("oolong" , "stress" , "exhaustion" , "immunodeficiency" , "cardiac_disease" , "water_sprite" );
 
 	//Adding high mountain
-	add("oolong" , "relaxation" , "immune" , "high_mountain");
-	add("heart" , "high_mountain");
+	add("oolong" , "stress" , "immunodeficiency" , "high_mountain");
+	add("cardiac_disease" , "high_mountain");
 
 	//Adding puerh
-	add("digestion" , "awake" , "heart" , "puerh" ); 
+	add("indigestion" , "exhaustion" , "cardiac_disease" , "puerh" ); 
     }
     
     //size(): returns the size if the array
@@ -211,8 +211,8 @@ public class Tea {
 	teas.sort();
 	System.out.println(teas);
 
-	for (int i = 0 ; i < size(teas.locate("digestion")) ; i++ ) {
-	    System.out.println(teas.locate("digestion")[i]);
+	for (int i = 0 ; i < size(teas.locate("indigestion")) ; i++ ) {
+	    System.out.println(teas.locate("indigestion")[i]);
 	}
 
     }
