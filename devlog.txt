@@ -7,33 +7,31 @@ pd 1
 Tea Database
 
 
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-USAGE:
-* Replace all fields, angle brackets included, with specified info.
-  eg, pd <pd#> --> pd 3
-* Delete these instructions once all teammates understand usage.
-  (from tilde bar above to tilde bar below)
-
-devlog--
-Use keyboard shortcut to jump to end,
- replicate entry template,
- modify appropriately.
-
-zone of reflection--
-Flesh out each category whenever necessary, appropriate.
- Need not be fully filled in until end of project,
- but best done as you go along.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-
 /////////// Zone of Reflection \\\\\\\\\\\
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<Wow, we so BOSS bc...>
-
+- The implementation of Comparable: 
+  In the end, we found out that we did not need Comparable to use compareTo(), so we opted to not use Comparable. 
+- How we were going to trim down the choices for the user: 
+  We wanted to prevent the user from inputting invalid combinations of Tea families and Symptoms so we chose to 
+  limit the Tea families and Symptoms a user could choose after each trim. Originally, our trim methods were not 
+  working until we decided to add an add() method (like the ones we have in our Tea.java class). 
+- Userproofing the inputs: 
+  One major concern that we had throughout the project was "What if the user inputs an invalid input?"
+  Our first step was to make the user retype their input if their previous input was deemed invalid. 
+  This was done by going into the next iteration of the loop if an invalid input were to be made with the help of 'continue.' 
+  We then decided to extend this and make all of their inputs lowercase and not as case sensitive as it could be. 
+- 2D Array vs 2D ArrayList: 
+  Since we chose to not use Comparable in the end, we decided to stick with a regular 2D array. 
+- Unnecessary Whitespace being printed out 
+  Although this was more of an aesthetic obstacle, we found that there was constantly extra white space being printed out at the end. 
+  We soon realized that this was due to all of the null values that we ignored when we used size() instead of length. We had to change
+  our for each loop into a for loop to fix this. 
+- Different people, at different locations, but working on the same file at the same time 
+  join.me saved us a lot of anguish as it let us have one driver while the other two people watched, commented, and assisted with the coding. 
+  It even has a function where the viewers could take control of the presenter's computer and code in their place. 
+  
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 <
@@ -52,7 +50,7 @@ MID-DEVELOPMENT DESIGN CHANGES
 We changed ___ to ___ bc...
 - In our proposal, we changed the idea of using interfaces or abstract classes
   for our teas to using 2D arrays.
-<etc>
+
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -61,6 +59,8 @@ LESSONS LEARNED
 - It's easier to have things straight the first time than working with a lot of
   inefficient (for the coder or for the computer) code.
 - join.me is a lifesaver
+- Having the flowchart really helped organize our thoughts and guide our process. We managed to stay close to the flowchart the entire project. 
+
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
